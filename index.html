@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript test</title>
+</head>
+<body>
+  <div class="container">
+  <form>
+   Name <input type="text" class="name" placeholder=" First name"><br><br>
+  password  <input type="password" class="password"  id="myinput" placeholder=" Password"><br><br>
+  <button class="butt" id="btn1"></button>
+  <button class="butt" id="btn2"></button>
+  <button class="butt" id="btn3"></button>
+  <br>
+  <input type="checkbox" onclick="myfunction()"> Show password
+  <!-- <input type="text" id="display" readonly > -->
+  <p id="display"> Password is <span id="strenght"></span></p>
+  </form>
+</div>
+
+  
+  <script>
+    function myfunction(){
+      
+      var x = document.getElementById("myinput");
+      if (x.type === "password"){
+        x.type = "text";
+      }
+      else{
+        x.type = "password";
+      }
+    }
+    var x =  document.getElementById("myinput");
+    var dis = document.getElementById("display");
+    var str = document.getElementById("strenght");
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var btn3 = document.getElementById("btn3");
+    // var  btns = document.getElementsByClassName('but');
+    
+    x.addEventListener('input', () => {
+      if(x.value.length > 0){
+          dis.style.display = "block";
+          btn1.style.display = "block";
+      }
+      else{
+         dis.style.display = "none";
+        // btn1.style.display = "none";
+
+      }
+      if((x.value.length === 0) || (x.value.length < 4)){
+        str.innerHTML = " Weak";
+        // str.innerHTML = 
+        btn1.style.display = "inline";
+        btn1.style.width='5em';
+        btn1.style.borderColor ="#ff5925";
+        x.style.borderColor = "#ff5925";
+        dis.style.color = "#ff5925";
+      }else{
+        btn1.style.display = "none";
+        // btn1.style.borderColor ="#ff5925";
+      }
+      if (x.value.length >= 4 && x.value.length < 8){
+        str.innerHTML = " Medium";
+        x.style.borderColor = "yellow";
+        dis.style.color = "yellow";
+        btn1.style.display = "inline";
+        btn2.style.display = "inline";
+        btn2.style.width='5em';
+        btn1.style.width='5em';
+
+
+        btn1.style.borderColor ="yellow";
+        btn2.style.borderColor ="yellow";
+      }
+      else{
+         btn2.style.display = "none";
+      }
+      if(x.value.length >= 8){
+        str.innerHTML = " Strong";
+        x.style.borderColor = "#26d730";
+        dis.style.color = "#26d730";
+        btn1.style.display = "inline";
+        btn2.style.display = "inline";
+        btn3.style.display = "inline";
+        btn2.style.width='5em';
+        btn1.style.width='5em';
+        btn3.style.width='5em';
+        btn1.style.borderColor ="#26d730";
+        btn2.style.borderColor ="#26d730";
+        btn3.style.borderColor ="#26d730";
+      }
+      else{  
+        btn3.style.display = "none";
+      }
+    }
+    )
+  </script>
+</body>
+</html>

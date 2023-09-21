@@ -1,0 +1,42 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #000;
+  color: aliceblue;
+  font-size: 1.4rem;
+}
+.container{
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+
+}
+form{
+  max-width: 30%;
+  background-color: #333;
+  padding: 30px 30px;
+  margin: 50px;
+  margin-top: 11rem;
+  margin-inline-start: 34rem;
+  border-radius: 2rem;
+}
+.name, .password{
+  max-width: 50%;
+  height: 2rem;
+  background: transparent;
+  color: aliceblue;
+  border: 1px solid #fff;
+  border-radius: 2rem;
+}
+ 
+#display{
+  display: none;
+  position: absolute;
+  font-size: 1rem;
+  margin: 10px;
+  margin-inline-start: 4rem;
+}
